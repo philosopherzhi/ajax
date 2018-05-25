@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<script>
+				$.ajax({
+   				url:"https://weixin.sky31.com/mima/VoteAdmin/pages/DataVisualization/authentication.php?operate=getInfo",
+   				dataType:'json',
+   				method:"GET",
+   				data:{
+     				id:12334//获取到的id值
+  				 },
+  				success:function(datas){
+     				//data就是返回回来的值，当然你变量名也可以不叫data
+     				name=datas['name'],//我也不记得是datas['name']还是[图片]datas.name了，你试一下吧，下一个同理
+					authflag=datas['authentication'] //如果为1，表示已经认证过了，则结束认证，进行下一个环节
+					console.log(datas.code); //控制台输出
+  				},
+});
+		</script>
+	</body>
+</html>
